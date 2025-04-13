@@ -1,0 +1,12 @@
+{
+  "name": "Itay Lev",
+  "location": "Tel Aviv",
+  "techStack": [
+    "React",
+    "Node.js",
+    "Next.js",
+    "Mongodb"
+  ],
+  "experience": "Junior",
+  "remote": true
+}
