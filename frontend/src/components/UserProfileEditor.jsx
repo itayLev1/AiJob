@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import API_BASE from '../helpers/api';
 
 export default function UserProfileEditor() {
   const [profile, setProfile] = useState({
@@ -12,7 +13,7 @@ export default function UserProfileEditor() {
   const [newTech, setNewTech] = useState('');
 
   useEffect(() => {
-    fetch('/api/agents/user')
+    fetch(`${API_BASE}/agents/user`)
       .then(res => res.json())
       .then(data => setProfile(data));
   }, []);
@@ -43,7 +44,7 @@ export default function UserProfileEditor() {
   };
 
   const saveProfile = () => {
-    fetch('/api/agents/user', {
+    fetch(`${API_BASE}/agents/user`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(profile),
